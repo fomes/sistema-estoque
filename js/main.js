@@ -14,7 +14,7 @@ if(!localStorage.getItem('saldo')) {
   saldo.innerText = parseFloat(localStorage.getItem('saldo')).toFixed(2);
 }
 
-function verificar() {
+function check() {
   if (produto.value == "" && quantidade.value == 0 && preçov.value <= 0) {
     window.alert('Preencha todos os campos!');
     
@@ -32,7 +32,7 @@ function verificar() {
   };
 };
 
-function retirada() {
+function getCash() {
   let total = 0;
   valor_retirada = prompt('Digite valor para retirar: ');
 
@@ -47,7 +47,7 @@ function retirada() {
 
 }
 
-function deposito() {
+function putCash() {
   let total = 0;
   valor_deposito = prompt('Digite valor para retirar: ');
 
@@ -62,7 +62,7 @@ function deposito() {
 
 }
 
-function excluir() {
+function del() {
   if (confirm('Tem certeza que deseja excluir todos os produtos?')) {
     if (localStorage.length === 0) {
       window.alert('Estoque vazio!');
@@ -77,7 +77,7 @@ function excluir() {
   };
 };
 
-function adicionar() {
+function add() {
 
   var novo = document.getElementById("produto").value;
   var qtd = document.getElementById("quantidade").value;
@@ -147,7 +147,7 @@ function saidaItem(nome) {
 
   };
 
-  mostrarResultado();
+  refreshPage();
   location.reload();
 };
 
@@ -170,7 +170,7 @@ function entradaItem(nome) {
 
   };
 
-  mostrarResultado();
+  refreshPage();
 
 };
 
@@ -188,11 +188,11 @@ function removerItem(nome) {
 
   };
 
-  mostrarResultado();
+  refreshPage();
 
 };
 
-function mostrarResultado() {
+function refreshPage() {
 
   var itens = JSON.parse(localStorage.getItem('estoqueItens'));
   var resultadoItens = document.getElementById('resultados');

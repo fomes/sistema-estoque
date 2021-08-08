@@ -12,8 +12,8 @@
     <div class="font-weight-bold f-font">SALDO R$: 
       <span id="saldo"></span>
       <span> </span>
-      <button class="f-btn" title="RETIRADA!" onclick="retirada()"><i class="fa fa-minus"></i></button>
-      <button class="f-btn" title="RETIRADA!" onclick="deposito()"><i class="fa fa-plus"></i></button>
+      <button class="f-btn" title="RETIRADA!" onclick="getCash()"><i class="fa fa-minus"></i></button>
+      <button class="f-btn" title="RETIRADA!" onclick="putCash()"><i class="fa fa-plus"></i></button>
     </div>
 
   </div>
@@ -25,7 +25,7 @@
   <script defer src="js/main.js"></script>
 </head>
 
-<body onload="mostrarResultado()" class="f-body">
+<body onload="refreshPage()" class="f-body">
   <main id="app" class="text-center">
     <header>
       <h2>CONTROLE DE ESTOQUE</h2>
@@ -49,19 +49,19 @@
       <input class="f-input" type="number" name="preço" id="preço-venda" placeholder="Preço de Venda R$" autocomplete="off"
         inputmode="numeric" /></br>
 
-      <button class="btn btn-primary" name="adicionar" id="adicionar"onclick="verificar(), adicionar(), mostrarResultado()">
+      <button class="btn btn-primary" name="add" id="add"onclick="check(), add(), refreshPage()">
         ADD
       </button>
 
-      <button class="btn btn-danger" name="excluir" id="excluir" onclick="excluir(), mostrarResultado()">
+      <button class="btn btn-danger" name="del" id="del" onclick="del(), refreshPage()">
         EXCLUIR
       </button>
 
-      <button class="btn btn-warning" name="excluir" id="excluir" onclick="localStorageBackup()">
+      <button class="btn btn-warning" name="backup" id="backup" onclick="localStorageBackup()">
         BKP
       </button>
 
-      <button class="btn btn-success" name="excluir" id="excluir" onclick="localStorageRestore()">
+      <button class="btn btn-success" name="restore" id="restore" onclick="localStorageRestore()">
         RESTORE
       </button>
 
