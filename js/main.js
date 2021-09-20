@@ -14,7 +14,7 @@ if(!localStorage.getItem('saldo')) {
   saldo.innerText = parseFloat(localStorage.getItem('saldo')).toFixed(2);
 }
 
-function check() {
+function verificar() {
   if (produto.value == "" && quantidade.value == 0 && preçov.value <= 0) {
     window.alert('Preencha todos os campos!');
     
@@ -32,7 +32,7 @@ function check() {
   };
 };
 
-function getCash() {
+function retirada() {
   let total = 0;
   valor_retirada = prompt('Digite valor para retirar: ');
 
@@ -47,9 +47,9 @@ function getCash() {
 
 }
 
-function putCash() {
+function deposito() {
   let total = 0;
-  valor_deposito = prompt('Digite valor para retirar: ');
+  valor_deposito = prompt('Digite valor para depositar: ');
 
   if(valor_deposito === null || valor_deposito === '') {
     return;
@@ -62,7 +62,7 @@ function putCash() {
 
 }
 
-function del() {
+function excluir() {
   if (confirm('Tem certeza que deseja excluir todos os produtos?')) {
     if (localStorage.length === 0) {
       window.alert('Estoque vazio!');
@@ -77,7 +77,7 @@ function del() {
   };
 };
 
-function add() {
+function adicionar() {
 
   var novo = document.getElementById("produto").value;
   var qtd = document.getElementById("quantidade").value;
@@ -135,19 +135,13 @@ function saidaItem(nome) {
       }
     };
 
-    // console.log("saldo pré-venda: ", valor_venda);
-    // console.log("qtd: ", qtd);
-    // ------------------------------------------------------------
     valor_venda += itens[i].venda*qtd;
     localStorage.setItem('saldo', parseFloat(valor_venda));
-    // ------------------------------------------------------------
-    // console.log("saldo pós-venda: ", valor_venda);
-
     localStorage.setItem('estoqueItens', JSON.stringify(itens));
 
   };
 
-  refreshPage();
+  mostrarResultado();
   location.reload();
 };
 
@@ -170,7 +164,7 @@ function entradaItem(nome) {
 
   };
 
-  refreshPage();
+  mostrarResultado();
 
 };
 
@@ -188,11 +182,11 @@ function removerItem(nome) {
 
   };
 
-  refreshPage();
+  mostrarResultado();
 
 };
 
-function refreshPage() {
+function mostrarResultado() {
 
   var itens = JSON.parse(localStorage.getItem('estoqueItens'));
   var resultadoItens = document.getElementById('resultados');
@@ -288,7 +282,8 @@ var localStorageRestore = function () {
           var value = decodeURIComponent(unescape(backup[key]));
           window.localStorage.setItem(key, value);
         }
-        alert(Object.keys(backup).length + ' items resturados!');
+        // alert(Object.keys(backup).length + ' items resturados!');
+        alert('Backup restaurado com sucesso!');
         location.reload();
       };
       reader.readAsText(f);
