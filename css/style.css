@@ -68,11 +68,26 @@ p {
   margin-top: 5px;
 }
 
+.my-container {
+  display: flex;
+  justify-content: center;
+}
+
 .f-container {
   display: block;
   background-color: #EBEBEB;
   border-radius: 10px;
   padding-bottom: 10px;
+  width: 700px;
+}
+
+.sub-container {
+  display: flex;
+  justify-content: center;
+}
+
+.estoque {
+  margin-top: 10px;
 }
 
 .f-input {
@@ -85,13 +100,14 @@ p {
 }
 
 .f-grid {
+  border-radius: 10px;
   background-color: #EBEBEB;
   font-size: 13px;
+  width: 700px;
 }
 
 .f-grid th {
   border-bottom: solid 2px rgba(0, 0, 0, 0.219);
-  width: 100%;
 }
 
 .f-grid td {
@@ -105,12 +121,6 @@ p {
   padding: 20px;
   width: 100%;
   font-size: smaller;
-}
-
-.container {
-  max-width: 600px;
-  margin: 6px auto;
-  border-radius: 6px;
 }
 
 @media (max-width: 630px) {

@@ -31,7 +31,8 @@
       <h2>CONTROLE DE ESTOQUE</h2>
     </header>
 
-    <section id="dados" class="f-container container">
+    <div class="my-container">
+      <section id="dados" class="f-container">
       <p>
         ADICIONAR PRODUTO
         <i class="fa fa-shopping-cart"></i>
@@ -65,10 +66,12 @@
         RESTORE
       </button>
 
-    </section>
-    <section id="estoque">
-      <div>
-        <table class="f-grid container" style="table-layout: fixed; width: 100%;">
+      </section>
+    </div>
+
+    <div class="sub-container">
+      <div id="estoque" class="estoque">
+        <table class="f-grid">
           <th>ITEM</th>
           <th>QTD</th>
           <th>COMPRA</th>
@@ -79,7 +82,8 @@
           <tbody id="resultados"></tbody>
         </table>
       </div>
-    </section>
+    </div>
+
   </main>
 
   <footer class="f-footer">
