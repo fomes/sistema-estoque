@@ -1,19 +1,19 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css?family=Acme&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Acme&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 
 @font-face {
   font-family: Open Sans, sans-serif;
-  src: url('https://fonts.googleapis.com/css?family=Acme&display=swap');
+  src: url("https://fonts.googleapis.com/css?family=Acme&display=swap");
 }
 
 @font-face {
   font-family: Acme, sans-serif;
-  src: url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+  src: url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 }
 
 .f-body {
-  background-color: #80D0C7;
+  background-color: #80d0c7;
   font-family: Open Sans, sans-serif;
 }
 
@@ -54,7 +54,7 @@ h2 {
   color: rgb(30, 19, 179);
   font-weight: bolder;
   font-size: 14pt;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: block;
   padding-top: 40px;
 }
@@ -75,7 +75,7 @@ p {
 
 .f-container {
   display: block;
-  background-color: #EBEBEB;
+  background-color: #ebebeb;
   border-radius: 10px;
   padding-bottom: 10px;
   width: 700px;
@@ -101,7 +101,7 @@ p {
 
 .f-grid {
   border-radius: 10px;
-  background-color: #EBEBEB;
+  background-color: #ebebeb;
   font-size: 13px;
   width: 700px;
 }
@@ -116,11 +116,13 @@ p {
 }
 
 .f-footer {
-  bottom: 0;
-  text-align: center;
-  padding: 20px;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
   font-size: smaller;
+  bottom: 0;
+  padding: 10px;
+  width: 100%;
 }
 
 @media (max-width: 630px) {
