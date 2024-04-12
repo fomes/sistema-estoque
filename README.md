@@ -1,3 +1,5 @@
+![App Screenshot](https://github.com/fomes/stock-app/blob/master/public/preview.png)
+
 # Controle de estoque
 
 Controle de estoque simples, utilizando JavaScript, HTML5 e CSS3. 
